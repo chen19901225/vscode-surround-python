@@ -7,6 +7,14 @@
     "engines": {
         "vscode": "^1.32.0"
     },
+    "bugs": {
+        "url": "https://github.com/chen19901225/vscode-surround-python/issues",
+        "email": ""
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/chen19901225/vscode-surround-python.git"
+    },
     "categories": [
         "Snippets",
         "Other"
