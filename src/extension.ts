@@ -24,6 +24,7 @@ function getSurroundConfig():ISurroundConfig { // 获取配置
 function getEnableSurroundItems() {
     const items: ISurroundItem[] = [];
     const surroundConfig = getSurroundConfig(); // 获取配置
+    console.log("surround-python, config", surroundConfig);
     Object.keys(surroundConfig).forEach(surroundItemKey => {
         const surroundItem: ISurroundItem = surroundConfig[surroundItemKey];
         if(!surroundItem.disabled) {
@@ -64,6 +65,7 @@ function applyQuickPick(item: vscode.QuickPickItem, surroundItems: ISurroundItem
 }
 function registerCommands(context: vscode.ExtensionContext) {
     const Config = getSurroundConfig();
+    console.log("surround-python, config", Config);
     vscode.commands.getCommands().then(cmdList => {
         Object.keys(Config).forEach(key => {
             const cmdText = `surround-python.with.${key}`;
