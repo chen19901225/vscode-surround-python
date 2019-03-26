@@ -1,0 +1,172 @@
+{
+    "name": "surround-python",
+    "displayName": "vscode-surround-python",
+    "description": "vscode surround for python",
+    "version": "0.0.1",
+    "publisher": "cqh",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Snippets",
+        "Other"
+    ],
+    "keywords": [
+        "surround",
+        "wrap", 
+        "selection",
+        "snippet"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "configuration":{
+            "title": "Surround with",
+            "type": "object",
+            "properties": {
+                "surround-python.custom": {
+                    "type": "object",
+                    "default": {}
+                },
+                "surround-python.with.if": {
+                    "type": "object",
+                    "default": {
+                        "label": "if",
+                        "description": "if $condition:\n ...",
+                        "disabled": false,
+                        "snippet": "if ${1:condition}:\n\t$TM_SELECTED_TEXT\n$0"
+                    }
+                },
+                "surround-python.with.ifElse": {
+                    "type": "object",
+                    "default": {
+                      "label": "if/else",
+                      "description": "if ($condition) { ... } else { $else }",
+                      "disabled": false,
+                      "snippet": "if ${1:condition}: \n\t$TM_SELECTED_TEXT\nelse: \n\t$2\n$0"
+                    }
+                  },
+                  "surround-python.with.tryExcept": {
+                    "type": "object",
+                    "default": {
+                      "label": "try/except",
+                      "description": "try { ... } catch (err) { $catchBlock }",
+                      "disabled": false,
+                      "snippet": "try:\n\t$TM_SELECTED_TEXT\nexception ${2: Exception}:\n\t$1\n$0"
+                    }
+                  },
+                  "surround-python.with.tryFinally": {
+                    "type": "object",
+                    "default": {
+                      "label": "try/finaly",
+                      "description": "try { ... } finally { $finalBlock }",
+                      "disabled": false,
+                      "snippet": "try:\n\t$TM_SELECTED_TEXT\nfinally: \n\t$1\n$0"
+                    }
+                  },
+                  "surround-python.with.tryExceptFinally": {
+                    "type": "object",
+                    "default": {
+                      "label": "try/except/finally",
+                      "description": "try { ... } catch (err) {$catchBlock} finally { $finalBlock }",
+                      "disabled": false,
+                      "snippet": "try: \n\t$TM_SELECTED_TEXT\nexcept ${3: Exception}:\n\t$1\nfinally: \n\t$2\n$0"
+                    }
+                  },
+                  "surround-python.with.for": {
+                    "type": "object",
+                    "default": {
+                      "label": "for",
+                      "description": "for ($1) { ... }",
+                      "disabled": false,
+                      "snippet": "for $1:\n\t$TM_SELECTED_TEXT\n$0"
+                    }
+                  },
+                  "surround-python.with.with": {
+                    "type": "object",
+                    "default": {
+                      "label": "with",
+                      "description": "with { ... }",
+                      "disabled": false,
+                      "snippet": "with $1:\n\t$TM_SELECTED_TEXT\n$0"
+                    }
+                  }
+                  
+          }
+
+        },
+        "commands": [
+            {
+            "command": "surround-python.with",
+            "title": "Surround python with"
+            },
+            {
+                "command": "surround-python.with.if",
+                "title": "if",
+                "category": "surround python with"
+            },
+            {
+                "command": "surround-python.with.ifElse",
+                "title": "ifElse",
+                "category": "surround python with"
+            },
+            {
+                "command": "surround-python.with.tryExcept",
+                "title": "tryExcept",
+                "category": "surround python with"
+            },
+            {
+                "command": "surround-python.with.tryFinally",
+                "title": "tryFinally",
+                "category": "surround python with"
+            },
+            {
+                "command": "surround-python.with.tryExceptFinnally",
+                "title": "tryExceptFinally",
+                "category": "surround python with"
+            },
+            {
+                "command": "surround-python.with.for",
+                "title": "for",
+                "category": "surround python with"
+            },
+            {
+                "command": "surround-python.with.with",
+                "title": "with",
+                "category": "surround python with"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "surround-python.with",
+                "key":"alt+shift+Z",
+                "mac": "cmd+shift+Z",
+                "when":"editorHasSelection"
+            }
+        ],
+        "menu": {
+            "editor/context": [
+                {
+                    "when": "editorHasSelection",
+                    "command": "surround.with",
+                    "group": "1_modification"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    }
+}
