@@ -2,14 +2,14 @@
     "name": "surround-python",
     "displayName": "vscode-surround-python",
     "description": "vscode surround for python",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "cqh",
     "engines": {
         "vscode": "^1.32.0"
     },
     "bugs": {
         "url": "https://github.com/chen19901225/vscode-surround-python/issues",
-        "email": ""
+        "email": "1832866299@qq.com"
       },
       "repository": {
         "type": "git",
