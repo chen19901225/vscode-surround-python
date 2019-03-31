@@ -64,7 +64,7 @@
                       "label": "try/except",
                       "description": "try { ... } catch (err) { $catchBlock }",
                       "disabled": false,
-                      "snippet": "try:\n\t$TM_SELECTED_TEXT\nexception ${2: Exception}:\n\t$1\n$0"
+                      "snippet": "try:\n\t$TM_SELECTED_TEXT\nexcept ${2: Exception}:\n\t$1\n$0"
                     }
                   },
                   "surround-python.with.tryFinally": {
