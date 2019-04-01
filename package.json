@@ -2,7 +2,7 @@
     "name": "surround-python",
     "displayName": "vscode-surround-python",
     "description": "vscode surround for python",
-    "version": "0.0.6",
+    "version": "0.0.8",
     "publisher": "cqh",
     "engines": {
         "vscode": "^1.32.0"
@@ -64,7 +64,7 @@
                       "label": "try/except",
                       "description": "try { ... } catch (err) { $catchBlock }",
                       "disabled": false,
-                      "snippet": "try:\n\t$TM_SELECTED_TEXT\nexcept ${2: Exception}:\n\t$1\n$0"
+                      "snippet": "try:\n\t$TM_SELECTED_TEXT\nexcept ${2:Exception}:\n\t$1\n$0"
                     }
                   },
                   "surround-python.with.tryFinally": {
@@ -82,7 +82,7 @@
                       "label": "try/except/finally",
                       "description": "try { ... } catch (err) {$catchBlock} finally { $finalBlock }",
                       "disabled": false,
-                      "snippet": "try: \n\t$TM_SELECTED_TEXT\nexcept ${3: Exception}:\n\t$1\nfinally: \n\t$2\n$0"
+                      "snippet": "try: \n\t$TM_SELECTED_TEXT\nexcept ${3:Exception}:\n\t$1\nfinally: \n\t$2\n$0"
                     }
                   },
                   "surround-python.with.for": {
