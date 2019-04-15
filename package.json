@@ -2,7 +2,7 @@
     "name": "surround-python",
     "displayName": "vscode-surround-python",
     "description": "vscode surround for python",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "publisher": "cqh",
     "engines": {
         "vscode": "^1.32.0"
@@ -102,6 +102,15 @@
                       "disabled": false,
                       "snippet": "with $1:\n\t$TM_SELECTED_TEXT\n$0"
                     }
+                  },
+                  "surround-python.with.def": {
+                    "type": "object",
+                    "default": {
+                      "label": "def",
+                      "description": "def { ... }",
+                      "disabled": false,
+                      "snippet": "def ${1:func}(${2:param}):\n\t$TM_SELECTED_TEXT\n$0"
+                    }
                   }
                   
           }
@@ -146,7 +155,12 @@
                 "command": "surround-python.with.with",
                 "title": "with",
                 "category": "surround python with"
-            }
+            },
+            {
+              "command": "surround-python.with.def",
+              "title": "def",
+              "category": "surround python with"
+          }
         ],
         "keybindings": [
             {

@@ -31,4 +31,7 @@ first commit
 ### 0.0.8
 update `configuration` in package.json
 
+### 0.0.9
+update `configuration` in package.json add `def` wrapper
+
 
